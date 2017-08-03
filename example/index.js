@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import vueDialog from '../src/dialog'
+import vueDialog from '../index.js'
 
 new Vue({
   el: '#container',
