@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>dialog</title>
+</head>
+<body>
+  <div id="container">
+    <button @click="test1()">弹窗1</button>
+    <button @click="test2()">弹框2</button>
+    <button @click="test3()">弹框3</button>
+    <vue-dialog ref='dialog' 
+      :title="dialogOpts.title" 
+      :content="dialogOpts.content" 
+      :cancel-btn-text="dialogOpts.cancelBtnText" 
+      :confirm-btn-text="dialogOpts.confirmBtnText" 
+      :cancel="dialogOpts.cancel" 
+      :confirm="dialogOpts.confirm">
+      <p>这是一段信息</p>
+    </vue-dialog>
+  </div>
+  <script src="./dist/index.js"></script>
+</body>
+</html>

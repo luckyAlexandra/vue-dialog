@@ -1,0 +1,94 @@
+$blue = #316CCB
+$blueHover = #407FE7
+$border = #F1F1F1
+button {
+  background none
+  border none
+}
+.dialog-container{
+  position fixed
+  top 0
+  right 0
+  bottom 0
+  left 0
+  width 100%
+  height 100%
+  text-align center
+  background-color rgba(35, 35, 35, 0.4)
+  .dialog-modal{
+    position relative
+    background #fff
+    width 450px
+    display inline-block
+    vertical-align middle
+    line-height 36px
+    box-sizing border-box
+    .dialog-close{
+      position: absolute
+      right 32px 
+      top 17px
+      width 14px 
+      height 14px 
+    }  
+    .dialog-header{
+      height 48px 
+      line-height 48px
+      padding 0 32px
+      border-bottom 1px solid $border
+      text-align left
+    }
+    .dialog-body{
+      padding 32px 
+      padding-top 20px
+    }
+    .dialog-footer{
+      padding-bottom 32px
+      margin-top 48px
+      .btn{
+        padding 8px 18px
+        box-sizing border-box
+        outline none
+      }
+      .btn-hollow{
+        border 1px solid $blue
+        color $blue
+        &:hover {
+          background $blue
+          color #fff          
+        }
+      }
+      .btn-solid{
+        background $blue
+        border 1px solid $blue
+        color #fff
+        margin-left 16px
+        &:hover{
+          background $blueHover
+          border 1px solid $blueHover         
+        }
+      }
+    }
+  }
+}
+
+/* vue transiton */
+.dialog-fade-enter-active{
+  transition: background-color .2s linear
+}
+.dialog-fade-leave-active{
+  transition: background-color .2s linear
+}
+.dialog-fade-enter, .dialog-fade-leave-to{
+  background-color: rgba(35, 35, 35, 0)
+  .dialog-modal{
+    transform scale(0, 0)
+    transition all .2s linear
+  }
+}
+.dialog-fade-leave, .dialog-fade-enter-to{
+  background-color: rgba(35, 35, 35, 0.4)
+  .dialog-modal{
+    transform scale(1, 1)
+    transition all .2s linear
+  }
+}
